@@ -24,10 +24,8 @@
 <body>
     <h2>Reverse Timer SetTimeout</h2>
     <input type="number" id="time_duration" placeholder="Enter a value ">  
-    <!-- An <input> element for users to enter a time duration in minutes -->
     <div class="container">
         <div id="forTimeout" style="color: blue;">00m:00sec</div>
-          <!-- A  div element with an ID (forTimeout and forInterval) to display the timer in the format "00m:00sec". -->
         <button id="setTimeoutStartBtn" class="buttons">Start setTimeout</button>
         <button id="setTimeoutPauseBtn" class="buttons">Pause setTimeout</button>
         <button id="setTimeoutResumeBtn" class="buttons">Resume setTimeout</button> 
@@ -40,21 +38,19 @@
         <button id="setIntervalPauseBtn" class="buttons">Pause setInterval</button>
         <button id="setIntervalResumeBtn" class="buttons">Resume setInterval</button>
     </div><br><br>
-    <!-- Three buttons for starting, pausing, and resuming the timers. These buttons have IDs (setTimeoutStartBtn, setTimeoutPauseBtn, etc.) and are styled using the defined CSS classes. -->
 
     <script>
         let timeout;   
-        let interval; // timeout and interval are used to store the interval IDs for the setTimeout and setInterval timers.
+        let interval; 
         let a;
-        let b;     //a and b store the remaining time for setTimeout and setInterval, respectively.
+        let b;     
         let isTimeoutPaused = false;
-        let isIntervalPaused = false;    //isTimeoutPaused and isIntervalPaused are boolean flags to track whether the timers are paused or running.
+        let isIntervalPaused = false;
         let pausedTimeoutTime;
-        let pausedIntervalTime;         // pausedTimeoutTime and pausedIntervalTime store the time remaining when a timer is paused.
+        let pausedIntervalTime;         
 
-        function updateTimeout() {               //updateTimeout() and updateInterval() Functions:
-           // These functions decrement the timer values and update the displayed timer text. If the timer reaches zero, 
-            if (isTimeoutPaused) return;   //it clears the interval and displays an alert.
+        function updateTimeout() {
+            if (isTimeoutPaused) return;   
             a -= 1;
             if (a <= 0) {
                 clearInterval(timeout);
